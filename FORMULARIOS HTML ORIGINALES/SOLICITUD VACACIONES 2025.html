@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud de Vacaciones 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .form-container {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .header-section {
+            /* Color diferente a los 5 existentes (rosa/fucsia) */
+            background: linear-gradient(135deg, #be185d 0%, #ec4899 100%);
+        }
+        .table-header {
+            background-color: #e0f2fe; /* sky-100 */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen py-8">
+    <div class="max-w-5xl mx-auto px-4">
+        <!-- Header -->
+        <div class="header-section text-white rounded-t-xl p-6 mb-1">
+            <div class="flex justify-between items-start">
+                <div>
+                    <h1 class="text-2xl font-bold">OFICINA INSTITUCIONAL DE RECURSOS HUMANOS</h1>
+                    <p class="text-lg mt-2">SOLICITUD DE VACACIONES</p>
+                </div>
+                <div class="bg-white text-pink-700 px-4 py-2 rounded-lg text-center">
+                    <p class="text-sm font-semibold">FORMULARIO</p>
+                    <p class="text-lg font-bold">2025</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Container -->
+        <div class="form-container bg-white rounded-b-xl p-8">
+            <!-- Información del Funcionario (Encabezado Unificado) -->
+            <div class="mb-8">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">Información del Funcionario</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Nivel 1 -->
+                    <div>
+                        <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre completo del funcionario</label>
+                        <input type="text" id="nombre" class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-green-50 focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition">
+                    </div>
+                    <div>
+                        <label for="cedula" class="block text-sm font-medium text-gray-700 mb-1">Cédula</label>
+                        <input type="text" id="cedula" class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-green-50 focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition">
+                    </div>
+                    <!-- Nivel 2 -->
+                    <div>
+                        <label for="cargo" class="block text-sm font-medium text-gray-700 mb-1">Cargo</label>
+                        <input type="text" id="cargo" class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-green-50 focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition">
+                    </div>
+                    <div>
+                        <label for="posicion" class="block text-sm font-medium text-gray-700 mb-1">N° Posición</label>
+                        <input type="text" id="posicion" class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-green-50 focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition">
+                    </div>
+                    <!-- Nivel 3 (Sede más grande) -->
+                    <div class="md:col-span-2">
+                        <label for="sede" class="block text-sm font-medium text-gray-700 mb-1">Sede: Dirección/Departamento</label>
+                        <input type="text" id="sede" class="w-full px-4 py-3 border border-gray-300 rounded-lg bg-green-50 focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition">
+                    </div>
+                    <!-- Nivel 4 -->
+                    <div>
+                        <label for="region" class="block text-sm font-medium text-gray-700 mb-1">Oficina Regional: Provincia/Comarca</label>
+                        <input type="text" id="region" class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-green-50 focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition">
+                    </div>
+                    <div>
+                        <label for="jefe" class="block text-sm font-medium text-gray-700 mb-1">Nombre del Jefe Inmediato</label>
+                        <input type="text" id="jefe" class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-green-50 focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Declaración -->
+            <div class="mb-8">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">Declaración</h2>
+                <div class="bg-pink-50 p-6 rounded-lg border border-pink-100">
+                    <div class="text-sm text-gray-700 mb-4">
+                        <span>Por este medio informo a usted que haré uso de </span>
+                        <input type="number" id="dias-declaracion" min="1" max="999" step="1" class="mx-1 w-20 px-2 py-1 border border-gray-300 rounded bg-white focus:ring-1 focus:ring-pink-500 focus:border-pink-500 align-middle text-center">
+                        <span> días de vacaciones a las que tengo derecho, según el Artículo 95 del Texto Único de 2008, que contiene la Ley N°9 del 20 de junio de 1994.</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="fecha-inicio-vac" class="block text-sm font-medium text-gray-700 mb-1">Las mismas se harán efectivas</label>
+                            <input type="date" id="fecha-inicio-vac" class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-green-50 focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition">
+                        </div>
+                        <div>
+                            <label for="fecha-retorno" class="block text-sm font-medium text-gray-700 mb-1">Retornando a mis labores en día</label>
+                            <input type="date" id="fecha-retorno" class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-green-50 focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vacaciones Solicitadas -->
+            <div class="mb-8">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">Vacaciones correspondientes a:</h2>
+                <p class="text-sm text-gray-600 mb-3">Puede agregar varias líneas de vacaciones. Cada línea corresponde a un periodo solicitado.</p>
+
+                <div class="overflow-x-auto rounded-lg border border-gray-200 bg-sky-50">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="table-header">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Resolución</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Fecha</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider">Días</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-700 uppercase tracking-wider w-20">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200" id="vacaciones-body">
+                            <tr>
+                                <!-- Resolución: número entero 1..99 -->
+                                <td class="px-4 py-3 whitespace-nowrap">
+                                    <div class="flex items-center space-x-2">
+                                        <span class="text-sm text-gray-700">Resolución</span>
+                                        <input type="number" min="1" max="99" step="1" class="px-2 py-1 border border-gray-300 rounded focus:ring-1 focus:ring-pink-500 focus:border-pink-500 w-16 text-center" placeholder="0">
+                                    </div>
+                                </td>
+                                <!-- Fecha (como otros formularios) -->
+                                <td class="px-4 py-3 whitespace-nowrap">
+                                    <input type="date" class="w-full px-2 py-1 border border-gray-300 rounded focus:ring-1 focus:ring-pink-500 focus:border-pink-500">
+                                </td>
+                                <!-- Días: número entero -->
+                                <td class="px-4 py-3 whitespace-nowrap">
+                                    <div class="flex items-center space-x-2">
+                                        <input type="number" min="1" max="999" step="1" class="px-2 py-1 border border-gray-300 rounded focus:ring-1 focus:ring-pink-500 focus:border-pink-500 w-20 text-center" placeholder="0">
+                                        <span class="text-sm text-gray-700">días</span>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-3 whitespace-nowrap text-center">
+                                    <button type="button" class="text-red-500 hover:text-red-700 remove-vac-row">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-4 flex justify-end">
+                    <button type="button" id="add-vac-row" class="flex items-center text-pink-600 hover:text-pink-800 font-medium">
+                        <i class="fas fa-plus-circle mr-2"></i> Agregar vacaciones
+                    </button>
+                </div>
+            </div>
+
+            <!-- Observaciones -->
+            <div class="mb-8">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">Observaciones</h2>
+                <textarea id="observaciones" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 transition" placeholder="Observaciones..."></textarea>
+            </div>
+
+            <!-- Para uso de la OIRH -->
+            <div class="mb-8">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">Para uso de la Oficina Institucional de Recursos Humanos</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <h3 class="font-medium text-gray-700 mb-2">Revisado por</h3>
+                        <div class="mb-4">
+                            <input type="text" class="w-full px-3 py-2 border-b border-gray-300 focus:outline-none focus:border-pink-500" placeholder="Nombre">
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Fecha:</span>
+                            <input type="date" class="px-3 py-1 border border-gray-300 rounded focus:ring-1 focus:ring-pink-500 focus:border-pink-500">
+                        </div>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <h3 class="font-medium text-gray-700 mb-2">Autorizado por OIRH</h3>
+                        <div class="mb-4">
+                            <input type="text" class="w-full px-3 py-2 border-b border-gray-300 focus:outline-none focus:border-pink-500" placeholder="Nombre">
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Fecha:</span>
+                            <input type="date" class="px-3 py-1 border border-gray-300 rounded focus:ring-1 focus:ring-pink-500 focus:border-pink-500">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
+                    <p class="text-sm text-gray-700">
+                        <strong>NOTA:</strong> Las solicitudes deben ser enviadas a Recursos Humanos con fin si de ante situación a la fecha de hacer efectivo el derecho.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Firmas -->
+            <div class="mb-8">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">Firmas</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <h3 class="font-medium text-gray-700 mb-4 text-center">Firma del Solicitante</h3>
+                        <div class="h-24 border-2 border-dashed border-gray-300 rounded flex items-center justify-center text-gray-400">
+                            <i class="fas fa-signature text-2xl mr-2"></i>
+                            <span>Espacio para firma</span>
+                        </div>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <h3 class="font-medium text-gray-700 mb-4 text-center">Firma del Jefe Inmediato</h3>
+                        <div class="h-24 border-2 border-dashed border-gray-300 rounded flex items-center justify-center text-gray-400">
+                            <i class="fas fa-signature text-2xl mr-2"></i>
+                            <span>Espacio para firma</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botones de acción -->
+            <div class="flex flex-col sm:flex-row justify-end gap-4 pt-6 border-t border-gray-200">
+                <button class="px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition flex items-center justify-center">
+                    <i class="fas fa-times mr-2"></i> Cancelar
+                </button>
+                <button class="px-6 py-3 bg-pink-600 text-white font-medium rounded-lg hover:bg-pink-700 transition flex items-center justify-center">
+                    <i class="fas fa-save mr-2"></i> Guardar Solicitud
+                </button>
+                <button class="px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition flex items-center justify-center">
+                    <i class="fas fa-paper-plane mr-2"></i> Enviar Solicitud
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer Note -->
+        <div class="mt-6 text-center text-sm text-gray-500">
+            <p>Formulario Oficial - Oficina Institucional de Recursos Humanos © 2025</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const body = document.getElementById('vacaciones-body');
+            const addBtn = document.getElementById('add-vac-row');
+
+
+            addBtn.addEventListener('click', function() {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class="px-4 py-3 whitespace-nowrap">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-sm text-gray-700">Resolución</span>
+                            <input type="number" min="1" max="99" step="1" class="px-2 py-1 border border-gray-300 rounded focus:ring-1 focus:ring-pink-500 focus:border-pink-500 w-16 text-center" placeholder="0">
+                        </div>
+                    </td>
+                    <td class="px-4 py-3 whitespace-nowrap">
+                        <input type="date" class="w-full px-2 py-1 border border-gray-300 rounded focus:ring-1 focus:ring-pink-500 focus:border-pink-500">
+                    </td>
+                    <td class="px-4 py-3 whitespace-nowrap">
+                        <div class="flex items-center space-x-2">
+                            <input type="number" min="1" max="999" step="1" class="px-2 py-1 border border-gray-300 rounded focus:ring-1 focus:ring-pink-500 focus:border-pink-500 w-20 text-center" placeholder="0">
+                            <span class="text-sm text-gray-700">días</span>
+                        </div>
+                    </td>
+                    <td class="px-4 py-3 whitespace-nowrap text-center">
+                        <button type="button" class="text-red-500 hover:text-red-700 remove-vac-row">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                `;
+                body.appendChild(row);
+            });
+
+            body.addEventListener('click', function(e) {
+                if (e.target.closest('.remove-vac-row')) {
+                    const row = e.target.closest('tr');
+                    if (body.children.length > 1) {
+                        body.removeChild(row);
+                    } else {
+                        alert('Debe haber al menos una línea de vacaciones');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+

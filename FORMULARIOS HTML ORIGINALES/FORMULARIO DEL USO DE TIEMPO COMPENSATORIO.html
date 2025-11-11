@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Uso de Tiempo Compensatorio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .form-container {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .header-section {
+            background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen py-8">
+    <div class="max-w-4xl mx-auto px-4">
+        <!-- Header -->
+        <div class="header-section text-white rounded-t-xl p-6 mb-1">
+            <div class="flex justify-between items-start">
+                <div>
+                    <h1 class="text-2xl font-bold">OFICINA INSTITUCIONAL DE RECURSOS HUMANOS</h1>
+                    <p class="text-lg mt-2">SOLICITUD DE USO DE TIEMPO COMPENSATORIO</p>
+                </div>
+                <div class="bg-white text-orange-800 px-4 py-2 rounded-lg text-center">
+                    <p class="text-sm font-semibold">FORMULARIO</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Container -->
+        <div class="form-container bg-white rounded-b-xl p-8">
+            <!-- Información del Funcionario (Encabezado Unificado) -->
+            <div class="mb-8">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">Información del Funcionario</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Nivel 1 -->
+                    <div>
+                        <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre completo del funcionario</label>
+                        <input type="text" id="nombre" class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-green-50 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition">
+                    </div>
+                    <div>
+                        <label for="cedula" class="block text-sm font-medium text-gray-700 mb-1">Cédula</label>
+                        <input type="text" id="cedula" class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-green-50 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition">
+                    </div>
+                    <!-- Nivel 2 -->
+                    <div>
+                        <label for="cargo" class="block text-sm font-medium text-gray-700 mb-1">Cargo</label>
+                        <input type="text" id="cargo" class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-green-50 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition">
+                    </div>
+                    <div>
+                        <label for="posicion" class="block text-sm font-medium text-gray-700 mb-1">N° Posición</label>
+                        <input type="text" id="posicion" class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-green-50 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition">
+                    </div>
+                    <!-- Nivel 3 (Sede más grande) -->
+                    <div class="md:col-span-2">
+                        <label for="sede" class="block text-sm font-medium text-gray-700 mb-1">Sede: Dirección/Departamento</label>
+                        <input type="text" id="sede" class="w-full px-4 py-3 border border-gray-300 rounded-lg bg-green-50 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition">
+                    </div>
+                    <!-- Nivel 4 -->
+                    <div>
+                        <label for="regional" class="block text-sm font-medium text-gray-700 mb-1">Oficina Regional: Provincia/Comarca</label>
+                        <input type="text" id="regional" class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-green-50 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition">
+                    </div>
+                    <div>
+                        <label for="jefe" class="block text-sm font-medium text-gray-700 mb-1">Nombre del Jefe Inmediato</label>
+                        <input type="text" id="jefe" class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-green-50 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Time Request Section -->
+            <div class="mb-8">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">Tiempo Solicitado</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-orange-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-medium text-orange-800 mb-4 text-center">Tiempo Compensatorio</h3>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label for="horas" class="block text-sm font-medium text-gray-700 mb-1">Horas</label>
+                                <input type="number" id="horas" min="0" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition" placeholder="0">
+                            </div>
+                            
+                            <div>
+                                <label for="dias" class="block text-sm font-medium text-gray-700 mb-1">Días</label>
+                                <input type="number" id="dias" min="0" max="30" step="1" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition" placeholder="0">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-orange-50 p-6 rounded-lg">
+                        <h3 class="text-lg font-medium text-orange-800 mb-4 text-center">Fecha de Uso</h3>
+                        
+                        <div>
+                            <label for="fecha-uso" class="block text-sm font-medium text-gray-700 mb-1">Fecha en que hace uso del tiempo</label>
+                            <input type="date" id="fecha-uso" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Signatures Section -->
+            <div class="mb-8">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">Autorizaciones</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <h3 class="font-medium text-gray-700 mb-2">Firma Servidor Público</h3>
+                        <div class="mb-4">
+                            <div class="h-20 border-2 border-dashed border-gray-300 rounded flex items-center justify-center text-gray-400">
+                                <i class="fas fa-signature text-2xl mr-2"></i>
+                                <span>Espacio para firma</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Fecha:</span>
+                            <input type="date" class="px-3 py-1 border border-gray-300 rounded focus:ring-1 focus:ring-orange-500 focus:border-orange-500">
+                        </div>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <h3 class="font-medium text-gray-700 mb-2">Aprobado - Jefe Inmediato</h3>
+                        <div class="mb-4">
+                            <div class="h-20 border-2 border-dashed border-gray-300 rounded flex items-center justify-center text-gray-400">
+                                <i class="fas fa-signature text-2xl mr-2"></i>
+                                <span>Espacio para firma</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Fecha:</span>
+                            <input type="date" class="px-3 py-1 border border-gray-300 rounded focus:ring-1 focus:ring-orange-500 focus:border-orange-500">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 border border-gray-200 rounded-lg p-4">
+                    <h3 class="font-medium text-gray-700 mb-2">Enterado</h3>
+                    <div class="flex items-center">
+                        <input type="text" class="w-full px-3 py-2 border-b border-gray-300 focus:outline-none focus:border-orange-500" placeholder="Jefe Institucional de Recursos Humanos">
+                    </div>
+                </div>
+            </div>
+
+            <!-- HR Section -->
+            <div class="mb-8">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">Para uso de la Oficina Institucional de Recursos Humanos</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div>
+                            <label for="saldo" class="block text-sm font-medium text-gray-700 mb-1">Saldo</label>
+                            <input type="text" id="saldo" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition">
+                        </div>
+                        
+                        <div>
+                            <label for="tiempo-tomado" class="block text-sm font-medium text-gray-700 mb-1">Tiempo tomado (esta solicitud)</label>
+                            <input type="text" id="tiempo-tomado" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition">
+                        </div>
+                        
+                        <div>
+                            <label for="pendiente" class="block text-sm font-medium text-gray-700 mb-1">Pendiente por tomar</label>
+                            <input type="text" id="pendiente" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="observaciones" class="block text-sm font-medium text-gray-700 mb-1">Observaciones</label>
+                        <textarea id="observaciones" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition" placeholder="Observaciones..."></textarea>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div>
+                        <label for="registrado" class="block text-sm font-medium text-gray-700 mb-1">Registrado</label>
+                        <input type="text" id="registrado" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition">
+                    </div>
+                    
+                    <div>
+                        <label for="fecha-registro" class="block text-sm font-medium text-gray-700 mb-1">Fecha</label>
+                        <input type="date" id="fecha-registro" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row justify-end gap-4 pt-6 border-t border-gray-200">
+                <button class="px-6 py-3 border border-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-50 transition flex items-center justify-center">
+                    <i class="fas fa-times mr-2"></i> Cancelar
+                </button>
+                <button class="px-6 py-3 bg-orange-600 text-white font-medium rounded-lg hover:bg-orange-700 transition flex items-center justify-center">
+                    <i class="fas fa-save mr-2"></i> Guardar Solicitud
+                </button>
+                <button class="px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition flex items-center justify-center">
+                    <i class="fas fa-paper-plane mr-2"></i> Enviar Solicitud
+                </button>
+            </div>
+        </div>
+        
+        <!-- Footer Note -->
+        <div class="mt-6 text-center text-sm text-gray-500">
+            <p>Formulario Oficial - Oficina Institucional de Recursos Humanos</p>
+        </div>
+    </div>
+
+    <script>
+        // Script para funcionalidades adicionales
+        document.addEventListener('DOMContentLoaded', function() {
+            const horasInput = document.getElementById('horas');
+            const diasInput = document.getElementById('dias');
+            const tiempoTomadoInput = document.getElementById('tiempo-tomado');
+            const saldoInput = document.getElementById('saldo');
+            const pendienteInput = document.getElementById('pendiente');
+            
+            // Calcular automáticamente el tiempo tomado
+            function calcularTiempoTomado() {
+                const horas = parseFloat(horasInput.value) || 0;
+                const dias = parseFloat(diasInput.value) || 0;
+                
+                // Convertir días a horas (asumiendo 8 horas por día)
+                const totalHoras = horas + (dias * 8);
+                
+                if (totalHoras > 0) {
+                    tiempoTomadoInput.value = `${totalHoras} horas`;
+                    
+                    // Si hay saldo, calcular pendiente
+                    if (saldoInput.value) {
+                        const saldo = parseFloat(saldoInput.value) || 0;
+                        const pendiente = saldo - totalHoras;
+                        pendienteInput.value = `${pendiente >= 0 ? pendiente : 0} horas`;
+                    }
+                } else {
+                    tiempoTomadoInput.value = '';
+                    pendienteInput.value = '';
+                }
+            }
+            
+            horasInput.addEventListener('input', calcularTiempoTomado);
+            diasInput.addEventListener('input', calcularTiempoTomado);
+            saldoInput.addEventListener('input', calcularTiempoTomado);
+            
+            // Establecer fecha mínima como hoy para la fecha de uso
+            const fechaUso = document.getElementById('fecha-uso');
+            const today = new Date().toISOString().split('T')[0];
+            fechaUso.min = today;
+        });
+    </script>
+</body>
+</html>
