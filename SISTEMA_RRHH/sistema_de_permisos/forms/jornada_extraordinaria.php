@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
             }
 
-            $mensaje = '¡Formulario guardado exitosamente!';
+            $mensaje = '¡Solicitud de jornada extraordinaria enviada exitosamente!';
         } else {
             $error = 'Error al guardar: ' . $conn->error;
         }
@@ -294,7 +294,7 @@ cerrarDB($conn);
                     <i class="fas fa-times mr-2"></i> Cancelar
                 </a>
                 <button type="submit" class="px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition flex items-center justify-center">
-                    <i class="fas fa-save mr-2"></i> Guardar Formulario
+                    <i class="fas fa-paper-plane mr-2"></i> Enviar Solicitud
                 </button>
             </div>
         </form>

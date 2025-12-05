@@ -19,7 +19,7 @@ $funcionario_id = getFuncionarioId();
 
 // Si se guardó exitosamente, mostrar mensaje
 if (isset($_GET['guardado']) && $_GET['guardado'] == '1') {
-    $mensaje = '¡Notificación de reincorporación guardada exitosamente!';
+    $mensaje = '¡Notificación de reincorporación enviada exitosamente!';
     // Limpiar $_POST para que no se muestren valores anteriores
     $_POST = array();
 }
@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         );
         
         if ($stmt->execute()) {
-            $mensaje = '¡Notificación de reincorporación guardada exitosamente!';
+            $mensaje = '¡Notificación de reincorporación enviada exitosamente!';
             // Redirigir para limpiar el formulario completamente
             header('Location: reincorporacion.php?guardado=1');
             exit();
@@ -365,7 +365,7 @@ cerrarDB($conn);
                     <i class="fas fa-times mr-2"></i> Cancelar
                 </a>
                 <button type="submit" class="px-6 py-3 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition flex items-center justify-center">
-                    <i class="fas fa-save mr-2"></i> Guardar Notificación
+                    <i class="fas fa-paper-plane mr-2"></i> Enviar Solicitud
                 </button>
             </div>
         </form>

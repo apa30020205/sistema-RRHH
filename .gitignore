@@ -1,0 +1,92 @@
+# Archivos de configuración sensibles
+SISTEMA_RRHH/sistema_de_permisos/config/database.php
+
+# Archivos de vendor (dependencias)
+SISTEMA_RRHH/sistema_de_permisos/vendor/
+SISTEMA_RRHH/vendor/
+
+# Archivos temporales y logs
+*.log
+*.tmp
+*.cache
+*.swp
+*.swo
+*~
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.cursor/
+
+# Archivos de sesión PHP
+sess_*
+
+# Archivos de backup
+*.bak
+*.backup
+*_backup.*
+
+# Archivos de configuración local
+.env
+.env.local
+
+# Archivos de prueba temporales
+test_*.php
+*_test.php
+
+# Archivos de documentación temporal
+*.docx
+*.doc
+
+# Archivos compilados
+*.class
+*.o
+*.so
+
+# Archivos de base de datos local
+*.sql.backup
+*.db
+*.sqlite
+
+# Excluir todo el directorio AppData
+AppData/
+
+# Excluir archivos del sistema Windows
+NTUSER.*
+ntuser.*
+*.regtrans-ms
+*.blf
+*.ini
+hwid
+
+# Excluir directorios del usuario
+Desktop/
+Documents/
+Downloads/
+Pictures/
+Videos/
+Music/
+OneDrive/
+Dropbox/
+Contacts/
+Saved Games/
+Searches/
+Links/
+Favorites/
+
+# Archivos de configuración del usuario
+.bash_history
+.python_history
+.lesshst
+.viminfo
+.gitconfig
+.idlerc/
+.streamlit/
+

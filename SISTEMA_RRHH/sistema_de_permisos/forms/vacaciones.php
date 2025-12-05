@@ -9,6 +9,7 @@
 require_once '../config/database.php';
 require_once '../includes/session.php';
 require_once '../includes/funciones.php';
+require_once '../includes/aprobaciones.php';
 
 // Requerir que el usuario esté logueado
 requerirLogin();
@@ -17,10 +18,8 @@ $mensaje = '';
 $error = '';
 $funcionario_id = getFuncionarioId();
 
-// Si se guardó exitosamente, mostrar mensaje
+// Limpiar $_POST si viene de redirección
 if (isset($_GET['guardado']) && $_GET['guardado'] == '1') {
-    $mensaje = '¡Solicitud de vacaciones guardada exitosamente!';
-    // Limpiar $_POST para que no se muestren valores anteriores
     $_POST = array();
 }
 
@@ -97,9 +96,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
             }
             
-            $mensaje = '¡Solicitud de vacaciones guardada exitosamente!';
-            // Redirigir para limpiar el formulario completamente
-            header('Location: vacaciones.php?guardado=1');
+            // Iniciar flujo de aprobación
+            iniciarFlujoAprobacion($conn, 'vacaciones', $solicitud_id, $funcionario_id);
+            
+            // Redirigir a página de confirmación
+            header('Location: confirmacion.php?tipo=vacaciones&id=' . $solicitud_id);
             exit();
         } else {
             $error = 'Error al guardar: ' . $conn->error;
@@ -414,7 +415,7 @@ cerrarDB($conn);
                     <i class="fas fa-times mr-2"></i> Cancelar
                 </a>
                 <button type="submit" class="px-6 py-3 bg-pink-600 text-white font-medium rounded-lg hover:bg-pink-700 transition flex items-center justify-center">
-                    <i class="fas fa-save mr-2"></i> Guardar Solicitud
+                    <i class="fas fa-paper-plane mr-2"></i> Enviar Solicitud
                 </button>
             </div>
         </form>

@@ -220,6 +220,27 @@ cerrarDB($conn);
                 </div>
             </div>
         </div>
+
+        <!-- Sección de Herramientas -->
+        <h2 class="mb-4 mt-5">
+            <i class="fas fa-tools me-2"></i>Herramientas
+        </h2>
+
+        <div class="row">
+            <!-- Lector de Excel -->
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="form-card" style="border-left-color: #10b981;">
+                    <div class="text-center">
+                        <i class="fas fa-file-excel form-icon" style="color: #10b981;"></i>
+                        <h5>Lector de Excel</h5>
+                        <p class="text-muted small">Lee archivos Excel usando el microservicio Python</p>
+                        <a href="../lectura_de_excel_php/index.php" class="btn btn-success btn-form">
+                            <i class="fas fa-file-upload me-1"></i>Abrir Lector
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Bootstrap JS -->
